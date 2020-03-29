@@ -2,8 +2,14 @@
   "name": "graffitis-api",
   "version": "1.0.0",
   "description": "graffitis API",
-  "main": "server.js",
-  "scripts": {},
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "start:production": "node src/server.js -e \"NODE_ENV=production\"",
+    "node:latest": "sudo npm install -g n && sudo n latest",
+    "lint": "eslint **/*.js",
+    "lint:fix": "eslint --fix **/*.js"
+  },
   "author": "Reparto Tecnico Graffitids",
   "license": "MIT",
   "dependencies": {
