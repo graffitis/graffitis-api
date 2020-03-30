@@ -9,7 +9,10 @@
     "start:production": "node src/server.js -e \"NODE_ENV=production\"",
     "node:latest": "sudo npm install -g n && sudo n latest",
     "lint": "eslint **/*.js",
-    "lint:fix": "eslint --fix **/*.js"
+    "lint:fix": "eslint --fix **/*.js",
+    "docker:build": "docker build -t graffitis .",
+    "docker:run": "docker run --rm --name graffitis -p 5000:5000 -d graffitis",
+    "docker:stop": "docker stop graffitis"
   },
   "author": "Reparto Tecnico Graffitids",
   "license": "MIT",
