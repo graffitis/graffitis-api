@@ -2,8 +2,8 @@ global.__src = __dirname;
 
 const path = require('path');
 const mongoose = require('mongoose');
-const app = require('express')();
 
+const app = require(path.join(__src, 'app.js'));
 const { keys, config } = require(path.join(__src, 'config'));
 
 app.listen(config.PORT, () => {
