@@ -3,5 +3,14 @@
   "mongoose": {
     "useUnifiedTopology": true,
     "useNewUrlParser": true
+  },
+  "bodyParser": {
+    "json": {
+      "limit": "50mb"
+    },
+    "urlencoded": {
+      "limit": "50mb",
+      "extended": true
+    }
   }
 }
