@@ -1,7 +1,7 @@
 const path = require('path');
 
-const CRUD = require(path.join(__dirname, 'CRUD'));
+const crud = require(path.join(__dirname, 'crud'));
 
 module.exports = {
-  CRUD,
+  crud,
 };
