@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const compression = require('compression');
 const methodOverride = require('method-override');
+const cors = require('cors');
 
 function apply(app) {
   // Bodyparser config
@@ -16,6 +17,7 @@ function apply(app) {
   app.use(helmet());
   app.use(methodOverride('_method'));
   app.use(methodOverride('X-HTTP-Method-Overide'));
+  app.use(cors());
 
   // Optimization
   app.use(compression());
