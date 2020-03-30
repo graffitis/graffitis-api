@@ -1,5 +1,7 @@
 # :newspaper_roll: API docs
 
+The API is by no mean fault-free, every error should be reported to a dev
+
 ### Response structure
 
 The response is always formatted as `json`.
