@@ -2,6 +2,7 @@ const path = require('path');
 
 const { config } = require(path.join(__src, 'config'));
 
+const session = require('cookie-session');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const compression = require('compression');
@@ -21,6 +22,7 @@ function apply(app) {
   app.use(methodOverride('_method'));
   app.use(methodOverride('X-HTTP-Method-Overide'));
   app.use(cors());
+  app.use(session(config.cookie));
 
   // Optimization
   app.use(compression());
