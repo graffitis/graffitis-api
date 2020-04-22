@@ -1,104 +1,32 @@
-# :newspaper_roll: API docs
+# :newspaper_roll: [GRAFFITIS Platform](https://graffitis.itiscuneo.gov.it/)
 
-The API is by no mean fault-free, every error should be reported to a dev
+> by [**Reparto Tecnico Graffitis**](https://github.com/graffitis) :rocket:
 
-### Response structure
+## :gear: Setup
 
-The response is always formatted as `json`.
+Action to take before starting the server:
 
-- `query`: request filtered query
-- `status`: response status code
-- `data`: response data, may vary between endpoints
-- `[body]`: request filtered body
+- create a `src/config/keys.json` file, mimic to `src/config/keys.example.json`
+- add `<your-server-domain>/auth/login/callback` to your `google api` authorized routes
+- `npm i`
 
-### Status codes
+## :hammer_and_wrench: NPM Scripts
 
-- `500`: internal server error, please report to a dev
-- `404`: not found
-- `200`: generic OK
-- `201`: successfully created
+- `start` start an instance
+- `start:production` start a production-ready instance
+- `start:dev` start a `nodemon` instance watching `/src`
+- `node:latest` install latest node version (works only in UNIX systems)
+- `lint` suggest linting on `js` files
+- `lint:fix` lint `js` files
+- `docker:build` build the server in a `docker` container called `graffitis`
+- `docker:run` run the `docker` container called `graffitis`
+- `docker:stop` stop the `docker` container called `graffitis`
 
-### Endpoint tree
+## Docs
 
-- `/`: `GET`
-  - `post`: `GET`, `POST`, `PATCH`, `DELETE`
-  - `cat`: `GET`, `POST`, `PATCH`, `DELETE`
+Docs @ [Docs index](./docs/index.md)
 
-### CRUD endpoint description
+### Authors
 
-`CRUD` endpoints behave all in the same way, to change is the Model on which they work.
-
-#### GET
-
-- `params`: filter `req.query` for scheme allowed parameters
-- `res.data`: results of the `params` query applied to Model
-
-Eg: `/post?id=5e82097f606e056963ec50ab`, `/post?author=author&title=title`
-
-#### POST
-
-- `params`: filter `req.body` for scheme allowed parameters
-- `res.data`: newly created document
-
-Eg:
-
-```json
-BODY:
-{
-    "author": "author",
-    "this_isnt_a_scheme_allowed_params": "and_it_will_be_discarted",
-    ...
-}
-```
-
-#### PATCH
-
-- `params`:
-  - `id`: from `req.query`. :heavy_exclamation_mark: If `undefined` all documents will be updated :heavy_exclamation_mark:
-  - `body`: filter `req.body` for scheme allowed parameters
-- `res.data`: number of documents updated
-
-Eg:
-
-`/post?id=5e82097f606e056963ec50ab`
-
-```json
-BODY:
-{
-    "author": "author_modified"
-}
-```
-
-#### DELETE
-
-- `params`: filter `req.query` for scheme allowed parameters
-- `res.data`: number of documents deleted
-
-Eg: `/post?id=5e82097f606e056963ec50ab`, `/post?author=author&title=title`
-
-### Allowed parameters on CRUD endpoints
-
-#### /post
-
-- `id`, mapped to `_id`, read-only
-- `cover`
-- `title`
-- `desc`
-- `body`
-- `category`
-- `author`
-- `status`
-- `tags`
-- `special`
-- `featured`
-
-`created` and `edited` are automatically managed
-
-#### /cat
-
-- `id`, mapped to `_id`, read-only
-- `name`
-- `desc`
-- `status`
-
-`created` and `edited` are automatically managed
+- [@leonardoviada](https://github.com/leonardoviada) Leonardo Viada
+- [@PietroJomini](https://github.com/PietroJomini) Pietro Jomini
