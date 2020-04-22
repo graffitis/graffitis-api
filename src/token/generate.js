@@ -1,3 +1,3 @@
-const uuidv4 = require('uuid/v4');
+const uuid = require('uuid');
 
-module.exports = uuidv4;
+module.exports = uuid.v4;
