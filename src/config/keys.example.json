@@ -1,3 +1,7 @@
 {
-    "MongoURI": "@String"
+  "google": {
+    "ID": "@string",
+    "secret": "@string"
+  },
+  "MongoURI": "@string"
 }

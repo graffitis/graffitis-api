@@ -7,6 +7,9 @@ const helmet = require('helmet');
 const compression = require('compression');
 const methodOverride = require('method-override');
 const cors = require('cors');
+const passport = require('passport');
+
+const { google, serialize, deserialize } = require(path.join(__src, 'auth'));
 
 function apply(app) {
   // Bodyparser config
@@ -21,6 +24,13 @@ function apply(app) {
 
   // Optimization
   app.use(compression());
+
+  // Passport oauth20 google auth
+  app.use(passport.initialize());
+  app.use(passport.session());
+  passport.serializeUser(serialize);
+  passport.deserializeUser(deserialize);
+  passport.use(google.strategy);
 }
 
 module.exports = apply;
