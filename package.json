@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "start:dev": "nodemon src/server.js",
+    "start:dev": "nodemon --trace-warnings src/server.js",
     "start:production": "node src/server.js -e \"NODE_ENV=production\"",
     "node:latest": "sudo npm install -g n && sudo n latest",
     "lint": "eslint **/*.js",
