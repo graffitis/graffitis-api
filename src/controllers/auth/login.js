@@ -7,7 +7,7 @@ const callback = (req, res) => {
     if (typeof redirect === 'string' && redirect.startsWith('/'))
       return res.redirect(redirect);
   } catch (e) {}
-  return res.redirect('/me');
+  return res.redirect('/auth/me');
 };
 
 const login = (req, res, next) => {
