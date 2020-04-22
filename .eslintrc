@@ -9,6 +9,7 @@
     "class-methods-use-this": "off",
     "import/no-dynamic-require": "off",
     "no-underscore-dangle": "off",
+    "no-empty": "off",
     "indent": 2
   },
   "env": {
