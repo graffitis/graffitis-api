@@ -7,6 +7,7 @@ const user = {
   desc: String,
   role: Number,
   googleId: String,
+  token: String,
 };
 
 const schema = mongoose.Schema(user);
