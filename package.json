@@ -14,7 +14,7 @@
     "docker:run": "docker run --rm --name graffitis -p 5000:5000 -d graffitis",
     "docker:stop": "docker stop graffitis"
   },
-  "author": "Reparto Tecnico Graffitids",
+  "author": "Reparto Tecnico Graffitis",
   "license": "MIT",
   "repository": {
     "type": "git",
