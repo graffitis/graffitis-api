@@ -1,8 +1,7 @@
 const me = (req, res) => {
-  const logged = !!req.user;
-  const status = logged ? 200 : 400;
+  const status = req.user ? 200 : 401;
   res.status(status).json({
-    logged,
+    status,
     data: req.user,
   });
 };
