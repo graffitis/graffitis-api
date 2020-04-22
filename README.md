@@ -1,4 +1,4 @@
-# :newspaper_roll: [GRAFFITIS Platform](https://graffitis.itiscuneo.gov.it/)
+# :newspaper_roll: [Graffitis API](https://graffitis.itiscuneo.gov.it/)
 
 > by [**Reparto Tecnico Graffitis**](https://github.com/graffitis) :rocket:
 
