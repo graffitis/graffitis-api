@@ -1,9 +1,9 @@
 const get = (Model, schema) => async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.body;
 
   const query = id !== undefined ? { _id: id } : {};
   schema.forEach((key) => {
-    if (req.query[key]) query[key] = req.query[key];
+    if (req.query[key]) query[key] = req.body[key];
   });
 
   const payload = { query, status: 200 };
@@ -45,7 +45,7 @@ const post = (Model, schema) => async (req, res) => {
 };
 
 const patch = (Model, schema) => async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.body;
   const query = id ? { _id: id } : {};
 
   const body = {};
@@ -69,11 +69,11 @@ const patch = (Model, schema) => async (req, res) => {
 };
 
 const _delete = (Model, schema) => async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.body;
 
   const query = id !== undefined ? { _id: id } : {};
   schema.forEach((key) => {
-    if (req.query[key]) query[key] = req.query[key];
+    if (req.query[key]) query[key] = req.body[key];
   });
 
   const payload = { query, status: 200 };

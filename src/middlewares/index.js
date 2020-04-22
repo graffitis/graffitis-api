@@ -12,10 +12,19 @@ const passport = require('passport');
 
 const { google, serialize, deserialize } = require(path.join(__src, 'auth'));
 
+const query2body = (req, res, next) => {
+  req.body = { ...req.body, ...req.query };
+  next();
+};
+
 function apply(app) {
   // Bodyparser config
   app.use(bodyParser.json(config.bodyParser.json));
   app.use(bodyParser.urlencoded(config.bodyParser.urlencoded));
+
+  // Merge query & body
+  // TODO: check, not sure if is best practise
+  app.use(query2body);
 
   // Security
   app.use(helmet());
